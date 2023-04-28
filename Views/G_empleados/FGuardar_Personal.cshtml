@@ -1,0 +1,59 @@
+﻿@model empleadosModel
+@{
+    ViewData["Title"] = "FGuardar_empleado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+  <div class="card-header">
+    Guardar Personal
+  </div>
+  <div class="card-body">
+        <form asp-action="FGuardar_Personal" asp-controller="G_empleados" method="post">
+			<div class="mb-3">
+				<label class="form-label">Nombres</label>
+                <input asp-for="NPersonal" type="text" class="form-control">
+                <span asp-validation-for="NPersonal" class="text-danger"></span>
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Apellidos</label>
+                <input asp-for="APersonal" type="text" class="form-control">
+                <span asp-validation-for="APersonal" class="text-danger"></span>
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Fecha de nacimiento</label>
+                <input asp-for="FN" type="date" class="form-control">
+                <span asp-validation-for="FN" class="text-danger"></span>
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Fecha de ingreso</label>
+                <input asp-for="FI" type="date" class="form-control">
+                <span asp-validation-for="FI" class="text-danger"></span>
+			</div>
+			<div class="mb-3">
+				<label class="form-label">AFP</label>
+                <input asp-for="afp" type="text" class="form-control">
+                <span asp-validation-for="afp" class="text-danger"></span>
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Sueldo</label>
+                <input asp-for="sueldo" type="text" class="form-control">
+                <span asp-validation-for="sueldo" class="text-danger"></span>
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Rol</label>
+				<select asp-for="RolesId" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+					<option selected>Seleccionar Rol</option>
+					<option value="3">Gerente</option>
+					<option value="4">Recepcionista</option>
+					<option value="5">Despachador</option>
+					<option value="6">Delivery</option>
+				</select>
+                <span asp-validation-for="RolesId" class="text-danger"></span>
+			</div>
+       <button type="submit" class="btn btn-primary">Guardar</button>
+       <a asp-action="Listar_Personal" asp-controller="G_empleados" class="btn btn-warning">Volver a la lista</a>
+    </form>
+  </div>
+</div>
+

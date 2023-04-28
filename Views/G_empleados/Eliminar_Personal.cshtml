@@ -1,0 +1,30 @@
+﻿@model empleadosModel
+@{
+    ViewData["Title"] = "Eliminar_Personal";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-header">
+        Eliminar Producto
+    </div>
+    <div class="card-body">
+
+
+        <form asp-action="Eliminar_Personal" asp-controller="G_empleados" method="post">
+
+            <input asp-for="empleadoId" type="hidden" class="form-control">
+
+            <div class="alert alert-danger" role="alert">
+                ¿Desea eliminar al personal : @Html.DisplayTextFor(m => m.NPersonal)  @Html.DisplayTextFor(m => m.APersonal)?
+            </div>
+
+            <button type="submit" class="btn btn-danger">Elimnar</button>
+            <a asp-action="Listar_Personal" asp-controller="G_empleados" class="btn btn-warning">Volver a la lista</a>
+        </form>
+
+
+    </div>
+</div>
+

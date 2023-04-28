@@ -1,0 +1,53 @@
+﻿@model List<empleadosModel>
+@{
+    ViewData["Title"] = "Listar_Personal";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+  <div class="card-header">
+    Gestionar Personal
+  </div>
+  <div class="card-body">
+    <a asp-action="FGuardar_Personal" asp-controller="G_empleados" class="btn btn-success"><i class="bi bi-plus-circle"></i> Crear Nuevo</a>
+    <hr />
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Fecha de nacimiento</th>
+                <th>Fecha de ingreso</th>
+                <th>AFP</th>
+                <th>sueldo</th>
+                <th>Rol</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.empleadoId</td>
+                        <td>@item.NPersonal</td>
+                        <td>@item.APersonal</td>
+                        <td>@item.FN</td>
+                        <td>@item.FI</td>
+                        <td>@item.afp</td>
+                        <td>@item.sueldo</td>
+                        <td>@item.NRoles</td>
+                        <td>
+                            <a asp-action="FEditar_Personal" asp-controller="G_empleados" class="btn btn-primary btn-sm" asp-route-I_ID="@item.empleadoId">Editar</a>
+                            <a asp-action="Eliminar_Personal" asp-controller="G_empleados" class="btn btn-danger btn-sm" asp-route-I_ID="@item.empleadoId">Eliminar</a>
+                        </td>
+                    </tr>
+
+                }
+        </tbody>
+    </table>
+        
+
+  </div>
+</div>
+
