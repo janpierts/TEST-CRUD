@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {
+    "net8.0": {
       "Azure.Core/1.6.0": {
         "type": "package",
         "dependencies": {
@@ -5484,35 +5484,35 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net6.0": [
+    "net8.0": [
       "Microsoft.Data.SqlClient >= 4.1.0",
       "System.Data.SqlClient >= 4.1.0"
     ]
   },
   "packageFolders": {
-    "/home/rjfrdvlpr/.nuget/packages/": {}
+    "/home/rj/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/rjfrdvlpr/Desktop/TEST-CRUD/TEST-CRUD.csproj",
+      "projectUniqueName": "/home/rj/Desktop/Frontend/TEST-CRUD/TEST-CRUD.csproj",
       "projectName": "TEST-CRUD",
-      "projectPath": "/home/rjfrdvlpr/Desktop/TEST-CRUD/TEST-CRUD.csproj",
-      "packagesPath": "/home/rjfrdvlpr/.nuget/packages/",
-      "outputPath": "/home/rjfrdvlpr/Desktop/TEST-CRUD/obj/",
+      "projectPath": "/home/rj/Desktop/Frontend/TEST-CRUD/TEST-CRUD.csproj",
+      "packagesPath": "/home/rj/.nuget/packages/",
+      "outputPath": "/home/rj/Desktop/Frontend/TEST-CRUD/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/rjfrdvlpr/.nuget/NuGet/NuGet.Config"
+        "/home/rj/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net6.0"
+        "net8.0"
       ],
       "sources": {
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "projectReferences": {}
         }
       },
@@ -5520,11 +5520,16 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
-      "net6.0": {
-        "targetAlias": "net6.0",
+      "net8.0": {
+        "targetAlias": "net8.0",
         "dependencies": {
           "Microsoft.Data.SqlClient": {
             "target": "Package",
@@ -5554,8 +5559,30 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.408/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.Data.SqlClient' 4.1.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-8g2p-5pqh-5jmc",
+      "libraryId": "System.Data.SqlClient",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.Data.SqlClient' 4.1.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-98g6-xh36-x2p7",
+      "libraryId": "System.Data.SqlClient",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

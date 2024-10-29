@@ -1,0 +1,43 @@
+@{
+    ViewBag.Title = "Products";
+}
+
+<h2>Index</h2>
+
+<table class ="table table-dark table-striped" id="tabla-productos">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody id="cuerpo-tabla">
+    </tbody>
+</table>
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"
+  integrity="sha256-it5nQKHTz+34HijZJQkpNBIHsjpV8b6QzMJs9tmOBSo="
+  crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:5289/api/Products",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                JSON.stringify(data);
+                $.each(data, function (index, value) {
+                    var id = value ['id'];
+                    var nombre = value ['nombre'];
+                    var precio = value ['precio'];
+                    $("#cuerpo-tabla").append("<tr><td>" + id + "</td><td>" + nombre + "</td><td>" + precio + "</td></tr>");
+                });
+            },
+            error: function (xhr, status, error) {
+                console.log(xhr.responseText);
+            }
+        });
+    });
+</script>
